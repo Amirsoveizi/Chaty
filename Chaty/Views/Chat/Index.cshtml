@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null; // This view will not use the _Layout.cshtml
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Messenger (WhatsApp Style)</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="app">
+        <div class="sidebar">
+            <div class="app-bar">
+                <span id="userNameTitle">Connecting...</span>
+            </div>
+            <div class="user-list-container" id="userList">
+                <p style="padding: 15px; color: #888;">Loading users...</p>
+            </div>
+        </div>
+
+        <div class="chat-area">
+            <div class="chat-header" id="chatHeader">
+                Select a user to start chatting
+            </div>
+            <div class="messages" id="chatWindow">
+            </div>
+            <div class="input-area">
+                <input type="text" id="messageBox" placeholder="Type a message..." disabled />
+                <button id="sendBtn" disabled>Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.6.4.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.4.3.min.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script src="~/Scripts/chat.js"></script>
+</body>
+</html>
