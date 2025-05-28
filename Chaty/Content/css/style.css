@@ -1,0 +1,197 @@
+﻿body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #e5ddd5; /* WhatsApp-like background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.app {
+    display: flex;
+    width: 90%;
+    height: 95vh;
+    max-width: 1400px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 4px; /* Less rounded for a sharper look */
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 35%;
+    max-width: 400px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.app-bar {
+    padding: 15px 20px;
+    background-color: #f0f2f5; /* WhatsApp header color */
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #111b21;
+}
+
+.user-list-container {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.chat-list-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+    .chat-list-item:hover, .chat-list-item.active {
+        background-color: #f5f5f5;
+    }
+
+.profile-icon {
+    width: 45px;
+    height: 45px;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.chat-list-item span {
+    flex-grow: 1;
+    color: #111b21;
+}
+
+.chat-list-item .badge { /* Style for unread count */
+    background-color: #25d366; /* WhatsApp green */
+    color: white;
+    padding: 3px 7px;
+    border-radius: 10px;
+    font-size: 0.75em;
+    margin-left: 5px;
+    float: right; /* Position badge to the right */
+}
+
+.chat-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); /* WA Background */
+    background-repeat: repeat;
+}
+
+.chat-header {
+    padding: 15px 20px;
+    background-color: #f0f2f5;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+    color: #111b21;
+}
+
+.messages {
+    flex-grow: 1;
+    padding: 20px 5%; /* Use percentage for better scaling */
+    overflow-y: auto;
+}
+
+.message {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    max-width: 65%;
+    clear: both;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    line-height: 1.4;
+    position: relative;
+}
+
+    .message .timestamp {
+        font-size: 0.7em;
+        color: #888;
+        display: block;
+        text-align: right;
+        margin-top: 4px;
+        clear: both;
+    }
+
+    .message.other {
+        background-color: #fff;
+        float: left;
+        border-bottom-left-radius: 0;
+    }
+
+    .message.you {
+        background-color: #dcf8c6; /* WhatsApp 'you' color */
+        float: right;
+        border-bottom-right-radius: 0;
+    }
+
+.input-area {
+    padding: 10px 15px;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+}
+
+    .input-area input {
+        flex-grow: 1;
+        padding: 12px 18px;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        margin-right: 10px;
+        outline: none;
+    }
+
+    .input-area button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.2s ease;
+    }
+
+        .input-area button:hover {
+            background-color: #0056b3;
+        }
+
+        .input-area button:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
+
+.profile-icon.online {
+    background-color: #25d366; /* Green for online */
+    border: 2px solid white;
+    box-shadow: 0 0 3px #25d366;
+}
+
+.profile-icon.offline {
+    background-color: #6c757d; /* Grey for offline */
+}
+
+.chat-list-item span .badge { /* Style for unread count badge */
+    background-color: #f44336; /* Red for unread count */
+    color: white;
+    padding: 3px 7px;
+    border-radius: 10px;
+    font-size: 0.75em;
+    margin-left: 5px;
+    float: right;
+    font-weight: normal;
+}
